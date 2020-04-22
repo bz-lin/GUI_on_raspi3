@@ -11,7 +11,7 @@ install kivy on raspberry pi3
 * Antenna setup 
 * Appearance setup
 
-### Raspbian stretch install & configure:
+### Raspbian Buster Lite install & configure:
 You can download image file from [Buster Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
 
 ### Enable SSH Service:
