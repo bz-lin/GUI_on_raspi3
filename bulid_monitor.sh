@@ -4,14 +4,18 @@
 systemctl enable ssh
 systemctl restart ssh
 
+
 ##chage hostname##
 hostnamectl set-hostname monitor
 
 ##change password for pi##
 echo pi:monitor | chpasswd
 
-##Rotate touchscreen##
+##Rotate touchscreen, disable onboard wifi bluetooth##
 echo "lcd_rotate=2" >> /boot/config.txt
+echo "dtoverlay=pi3-disable-wifi" >> /boot/config.txt
+echo "dtoverlay=pi3-disable-bt" >> /boot/config.txt
+systemctl disable hciuart
 
 ##change mirror for raspi##
 #http://free.nchc.org.tw/raspbian/raspbian
