@@ -48,44 +48,44 @@ You can follow from [RaspAP](https://raspap.com/)
 ### Install kivy for python3 on raspbian:
 1.  Update for raspberry:
 
-        $sudo apt update
+		$sudo apt update
     
 2.  Install for raspberry:
 
-        $sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
-        pkg-config libgl1-mesa-dev libgles2-mesa-dev \
-        python-setuptools libgstreamer1.0-dev git-core \
-        gstreamer1.0-plugins-{bad,base,good,ugly} \
-        gstreamer1.0-{omx,alsa} python-dev libmtdev-dev \
-        xclip xsel libjpeg-dev
+		$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
+		pkg-config libgl1-mesa-dev libgles2-mesa-dev \
+		python-setuptools libgstreamer1.0-dev git-core \
+		gstreamer1.0-plugins-{bad,base,good,ugly} \
+		gstreamer1.0-{omx,alsa} python-dev libmtdev-dev \
+		xclip xsel libjpeg-dev
         
 3.  Additional install SDL2:
         
-        $sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+		$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
         
 4.  Install moudle for python3:
     
-        $pip3 install setuptools
-        $pip3 install Cython
+		$pip3 install setuptools
+		$pip3 install Cython
     
 5.  Install kivy1.11.1 for python3:
          
-        ~$wget https://kivy.org/downloads/1.11.1/Kivy-1.11.1.tar.gz
-        ~$tar -xvaf Kivy-1.11.1.tar.gz
-        ~$cd kivy-1.11.1
-        ~/kivy$pip3 install .
+		~$wget https://kivy.org/downloads/1.11.1/Kivy-1.11.1.tar.gz
+		~$tar -xvaf Kivy-1.11.1.tar.gz
+		~$cd kivy-1.11.1
+		~/kivy$pip3 install .
     
 6.  Setting official Pi touchscreen:
 
-        ~$vi ./kivy/config.ini
+		~$vi ./kivy/config.ini
 
     find [input] and add 2line:
     
-        mtdev_%(name)s = probesysfs,provider=mtdev
-        hid_%(name)s = probesysfs,provider=hidinput
+		mtdev_%(name)s = probesysfs,provider=mtdev
+		hid_%(name)s = probesysfs,provider=hidinput
 7.  Use example to test:
         
-        ~$python3 kivy/examples/demo/showcase/main.py
+		~$python3 kivy/examples/demo/showcase/main.py
     ![image](https://github.com/Bo-Zhang-Lin/RTKGPS/blob/master/picture/rover1.png)
     
     more detail for [kivy](https://github.com/kivy)
@@ -93,61 +93,61 @@ You can follow from [RaspAP](https://raspap.com/)
 ### Auto Start Kivy App on Boot:
 1.  File Location:
 
-         Your start bash file => /home/pi/start_App.sh
-         Your Kivy App => /home/pi/kivyapp/main.py
-         Your systemd File => /lib/systemd/system/kivyapp.service
+		Your start bash file => /home/pi/start_App.sh
+		Your Kivy App => /home/pi/kivyapp/main.py
+		Your systemd File => /lib/systemd/system/kivyapp.service
         
 2. start_App.sh content:
 
-         #!/bin/bash
-         cd /home/pi/kivyapp
-         /usr/bin/python3 /home/pi/kivyapp/main.py
+		#!/bin/bash
+		cd /home/pi/kivyapp
+		/usr/bin/python3 /home/pi/kivyapp/main.py
         
 3. Add kivyapp.service for systemd :
 >Add kivyapp.service
         
-      sudo vi /lib/systemd/system/kivyapp.service
+		sudo vi /lib/systemd/system/kivyapp.service
         
 >Add Lines:
 
-      [Unit]
-      Descriptiona=KivyApp Service
-      After=multi-user.target
+		[Unit]
+		Descriptiona=KivyApp Service
+		After=multi-user.target
 
-      [Service]
-      Type=idle
+		[Service]
+		Type=idle
 
-      User=pi        
-      ExecStart=/bin/bash /home/pi/start_App.sh
+		User=pi        
+		ExecStart=/bin/bash /home/pi/start_App.sh
 
-      Restart=always
-      RestartSec=0
+		Restart=always
+		RestartSec=0
 
-      [Install]
-      WantedBy=multi-user.target
+		[Install]
+		WantedBy=multi-user.target
         
  >Reload Daemon:
  
-        $sudo systemctl daemon-reload
+		$sudo systemctl daemon-reload
  
  >Enable Service:
  
-        $sudo systemctl enable kivyapp.service
+		$sudo systemctl enable kivyapp.service
 
 >Reboot to Test:
 
-        $sudo reboot
+		$sudo reboot
 
          
 ### Disable screen sleep:
 Change config:
 
-        ~$sudo nano /etc/lightdm/lightdm.conf
+		~$sudo nano /etc/lightdm/lightdm.conf
         
 Add the following lines to the [SeatDefaults] section:
 
-        # don't sleep the screen
-        xserver-command=X -s 0 dpms
+		# don't sleep the screen
+		xserver-command=X -s 0 dpms
 * * *
 
 ## Install kivy for python3 on Windows10 for Development 
