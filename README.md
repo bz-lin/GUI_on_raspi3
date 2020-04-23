@@ -98,114 +98,114 @@ You can follow from [RaspAP](https://raspap.com/)
 more detail for [kivy](https://github.com/kivy)
     
 ### Auto Start Kivy App on Boot:
-1.  File Location:
+1.File Location:
 
-		Your start bash file => /home/pi/start_App.sh
-		Your Kivy App => /home/pi/kivyapp/main.py
-		Your systemd File => /lib/systemd/system/kivyapp.service
+	Your start bash file => /home/pi/start_App.sh
+	Your Kivy App => /home/pi/kivyapp/main.py
+	Your systemd File => /lib/systemd/system/kivyapp.service
         
-2. start_App.sh content:
+2.start_App.sh content:
 
-		#!/bin/bash
-		cd /home/pi/kivyapp
-		/usr/bin/python3 /home/pi/kivyapp/main.py
+	#!/bin/bash
+	cd /home/pi/kivyapp
+	/usr/bin/python3 /home/pi/kivyapp/main.py
         
-3. Add kivyapp.service for systemd :
+3.Add kivyapp.service for systemd :
 >Add kivyapp.service
         
-		sudo vi /lib/systemd/system/kivyapp.service
+	sudo vi /lib/systemd/system/kivyapp.service
         
 >Add Lines:
 
-		[Unit]
-		Descriptiona=KivyApp Service
-		After=multi-user.target
+	[Unit]
+	Descriptiona=KivyApp Service
+	After=multi-user.target
 
-		[Service]
-		Type=idle
+	[Service]
+	Type=idle
 
-		User=pi        
-		ExecStart=/bin/bash /home/pi/start_App.sh
+	User=pi        
+	ExecStart=/bin/bash /home/pi/start_App.sh
 
-		Restart=always
-		RestartSec=0
+	Restart=always
+	RestartSec=0
 
-		[Install]
-		WantedBy=multi-user.target
+	[Install]
+	WantedBy=multi-user.target
         
  >Reload Daemon:
  
-		$sudo systemctl daemon-reload
+	$sudo systemctl daemon-reload
  
  >Enable Service:
  
-		$sudo systemctl enable kivyapp.service
+	$sudo systemctl enable kivyapp.service
 
 >Reboot to Test:
 
-		$sudo reboot
+	$sudo reboot
 
          
 ### Disable screen sleep:
 Change config:
 
-		~$sudo nano /etc/lightdm/lightdm.conf
+	~$sudo nano /etc/lightdm/lightdm.conf
         
 Add the following lines to the [SeatDefaults] section:
 
-		# don't sleep the screen
-		xserver-command=X -s 0 dpms
+	# don't sleep the screen
+	xserver-command=X -s 0 dpms
 * * *
 
 ## Install kivy for python3 on Windows10 for Development 
-1.  Install Anaconda:
+1.Install Anaconda:
 >https://www.anaconda.com/distribution/
 
-2.  Create virtaul enviroment
+2.Create virtaul enviroment
 
-    >lanuch anaconda prompt
+>lanuch anaconda prompt
 
-        (base)C:\Users\user.user>conda create --name ENVIRONMENT python=MAIN.MINOR.PATCH
+	(base)C:\Users\user.user>conda create --name ENVIRONMENT python=MAIN.MINOR.PATCH
         
-    >Create Example
+>Create Example
         
-        (base)C:\Users\user.user>conda create --name pygui python=3.7.3
+	(base)C:\Users\user.user>conda create --name pygui python=3.7.3
     
-    >Remove Example
+>Remove Example
     
-        (base)C:\Users\user.user>conda remove --name pygui --all
+	(base)C:\Users\user.user>conda remove --name pygui --all
     
-3.  Activate virtaul enviroment
+3.Activate virtaul enviroment
 
-        (base)C:\Users\user.user>conda activate ENVIRONMENT        
-    >Example
+	(base)C:\Users\user.user>conda activate ENVIRONMENT        
+>Example
 
-        (base)C:\Users\user.user>conda activate pygui
+	(base)C:\Users\user.user>conda activate pygui
         
 
  
-4.  Install kivy version=1.11.1
+4.Install kivy version=1.11.1
 
-        (pygui)C:\Users\user.user>pip install kivy==1.11.1
-        (pygui)C:\Users\user.user>pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
+	(pygui)C:\Users\user.user>pip install kivy==1.11.1
+	(pygui)C:\Users\user.user>pip install docutils pygments pypiwin32 kivy.deps.sdl2 kivy.deps.glew
         
-5.  Enviroment Copy
+5.Enviroment Copy
     
-    >Backup enviroment CMD
+>Backup enviroment CMD
     
-        conda env export --name ENVIRONMENT --file ENVIRONMENT.yml
+	conda env export --name ENVIRONMENT --file ENVIRONMENT.yml
         
-    >Example
+>Example
     
-        conda env export --name pygui --file pygui.yml
+	conda env export --name pygui --file pygui.yml
     
-    >Recovery enviroment CMD
+>Recovery enviroment CMD
     
-        conda env create --file ENVIRONMENT.yml --name ENVIRONMENT
+	conda env create --file ENVIRONMENT.yml --name ENVIRONMENT
     
-    >Example
+>Example
         
-        conda env create --file pygui.yml --name pygui
+	conda env create --file pygui.yml --name pygui
         
-6.  Test kivy
-        >https://github.com/kivy/kivy
+6.Test kivy
+	>https://github.com/kivy/kivy
