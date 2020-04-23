@@ -29,15 +29,16 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 >Install CMD:
 
 	$sudo apt install vsftpd
-
+	
 >Setting File:
 
         $sudo vi /etc/vsftpd.conf
 
 >Remove one Line '#':
 
-        #write_enable=Yes
-        write_enable=Yes
+	#write_enable=Yes
+	write_enable=Yes
+	
 >Enable service:
 
 	$sudo systemctl enable vsftpd
