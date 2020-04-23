@@ -22,8 +22,9 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 
 	$sudo raspi-config
 	
->2 Network Options Configure network settings 
-> N1 Hostname Set the visible name for this Pi on a network 
+>2 Network Options Configure network settings
+
+>N1 Hostname Set the visible name for this Pi on a network 
         
 ### Rotate touchscreen, disable onboard wifi, bluetooth:
 >Setting File:
