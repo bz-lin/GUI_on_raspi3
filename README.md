@@ -22,9 +22,11 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 >Setting File:
 
 	$sudo vi /boot/config.txt
+	
 >Add Line:
 
 	lcd_rotate=2
+	
 ### Install FTP Server:
 >Install CMD:
 
