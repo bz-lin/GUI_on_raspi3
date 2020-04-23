@@ -1,24 +1,28 @@
 ### build monitor with raspberry buster lite img ###
 
 ##enable ssh service##
-#systemctl enable ssh
+systemctl enable ssh
+systemctl restart ssh
+
+##chage hostname##
+hostnamectl set-hostname monitor
 
 ##change password for pi##
-#echo pi:monitor | chpasswd
+echo pi:monitor | chpasswd
 
 ##Rotate touchscreen##
-#echo "lcd_rotate=2" >> /boot/config.txt
+echo "lcd_rotate=2" >> /boot/config.txt
 
-##?change mirror for raspi?##
+##change mirror for raspi##
 #http://free.nchc.org.tw/raspbian/raspbian
-#echo "deb http://free.nchc.org.tw/raspbian/raspbian/ buster" > /etc/apt/sources.list     
+echo "deb http://free.nchc.org.tw/raspbian/raspbian/ buster main contrib non-free rpi" > /etc/apt/sources.list     
 
 ##update for raspi##
 apt update
 
 ##install vsftpd.service & setting##
-#apt install vsftpd -y
-#echo "write_enable=Yes" >> /etc/vsftpd.conf
+apt install vsftpd -y
+echo "write_enable=Yes" >> /etc/vsftpd.conf
 
 ##?install kivy ver.1.11.1?##
 #apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
@@ -40,4 +44,4 @@ apt update
 
 
 ##install raspap##
-curl -sL https://install.raspap.com | bash -s -- -y
+#curl -sL https://install.raspap.com | bash -s -- -y
