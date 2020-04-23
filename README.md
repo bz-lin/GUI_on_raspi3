@@ -34,7 +34,7 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 	
 >Setting File:
 
-        $sudo vi /etc/vsftpd.conf
+	$sudo vi /etc/vsftpd.conf
 
 >Remove one Line '#':
 
