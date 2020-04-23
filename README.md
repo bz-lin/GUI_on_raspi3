@@ -40,20 +40,20 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
         write_enable=Yes
 >Enable service:
 
-        $sudo systemctl enable vsftpd
+	$sudo systemctl enable vsftpd
 	
 ### Setup raspberry to route AP:
 You can follow from [RaspAP](https://raspap.com/)
         
 
 ### Install kivy for python3 on raspbian:
-1.  Update for raspberry:
+1.Update for raspberry:
 
 
 	$sudo apt update
     
     
-2.  Install for raspberry:
+2.Install for raspberry:
 
 	$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
 	pkg-config libgl1-mesa-dev libgles2-mesa-dev \
@@ -62,36 +62,37 @@ You can follow from [RaspAP](https://raspap.com/)
 	gstreamer1.0-{omx,alsa} python-dev libmtdev-dev \
 	xclip xsel libjpeg-dev
         
-3.  Additional install SDL2:
+3.Additional install SDL2:
         
-		$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
+	$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
         
-4.  Install moudle for python3:
+4.Install moudle for python3:
     
-		$pip3 install setuptools
-		$pip3 install Cython
+	$pip3 install setuptools
+	$pip3 install Cython
     
-5.  Install kivy1.11.1 for python3:
+5.Install kivy1.11.1 for python3:
          
-		~$wget https://kivy.org/downloads/1.11.1/Kivy-1.11.1.tar.gz
-		~$tar -xvaf Kivy-1.11.1.tar.gz
-		~$cd kivy-1.11.1
-		~/kivy$pip3 install .
+	~$wget https://kivy.org/downloads/1.11.1/Kivy-1.11.1.tar.gz
+	~$tar -xvaf Kivy-1.11.1.tar.gz
+	~$cd kivy-1.11.1
+	~/kivy$pip3 install .
     
-6.  Setting official Pi touchscreen:
+6.Setting official Pi touchscreen:
 
-		~$vi ./kivy/config.ini
+	~$vi ./kivy/config.ini
 
-    find [input] and add 2line:
+>find [input] and add 2line:
     
-		mtdev_%(name)s = probesysfs,provider=mtdev
-		hid_%(name)s = probesysfs,provider=hidinput
-7.  Use example to test:
+	mtdev_%(name)s = probesysfs,provider=mtdev
+	hid_%(name)s = probesysfs,provider=hidinput
+7.Use example to test:
         
-		~$python3 kivy/examples/demo/showcase/main.py
-    ![image](https://github.com/Bo-Zhang-Lin/RTKGPS/blob/master/picture/rover1.png)
-    
-    more detail for [kivy](https://github.com/kivy)
+	~$python3 kivy/examples/demo/showcase/main.py
+	
+![image](https://github.com/Bo-Zhang-Lin/RTKGPS/blob/master/picture/rover1.png)
+
+more detail for [kivy](https://github.com/kivy)
     
 ### Auto Start Kivy App on Boot:
 1.  File Location:
