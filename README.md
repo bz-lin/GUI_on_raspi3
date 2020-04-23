@@ -17,6 +17,13 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 ### Enable SSH Service:
 	$sudo systemctl enable ssh
 	$sudo systemctl start ssh
+	
+### Change Hostname:
+
+	$sudo raspi-config
+	
+>2 Network Options Configure network settings 
+> N1 Hostname Set the visible name for this Pi on a network 
         
 ### Rotate touchscreen, disable onboard wifi, bluetooth:
 >Setting File:
