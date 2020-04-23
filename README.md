@@ -15,8 +15,8 @@ install kivy on raspberry pi3
 You can download image file from [Buster Lite](https://downloads.raspberrypi.org/raspbian_lite_latest)
 
 ### Enable SSH Service:
-        $sudo systemctl enable ssh
-        $sudo systemctl start ssh
+	$sudo systemctl enable ssh
+	$sudo systemctl start ssh
         
 ### Rotate touchscreen:
 >Setting File:
