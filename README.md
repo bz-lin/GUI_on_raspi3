@@ -18,7 +18,7 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 	$sudo systemctl enable ssh
 	$sudo systemctl start ssh
         
-### Rotate touchscreen:
+### Rotate touchscreen, disable onboard wifi, bluetooth:
 >Setting File:
 
 	$sudo vi /boot/config.txt
@@ -26,6 +26,12 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 >Add Line:
 
 	lcd_rotate=2
+	dtoverlay=pi3-disable-wifi
+	dtoverlay=pi3-disable-bt
+
+>disable service:
+
+	$sudo systemctl disable hciuart
 	
 ### Install FTP Server:
 >Install CMD:
