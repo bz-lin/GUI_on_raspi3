@@ -93,38 +93,38 @@ You can follow from [RaspAP](https://raspap.com/)
 ### Auto Start Kivy App on Boot:
 1.  File Location:
 
-        Your start bash file => /home/pi/start_App.sh
-        Your Kivy App => /home/pi/kivyapp/main.py
-        Your systemd File => /lib/systemd/system/kivyapp.service
+      Your start bash file => /home/pi/start_App.sh
+      Your Kivy App => /home/pi/kivyapp/main.py
+      Your systemd File => /lib/systemd/system/kivyapp.service
         
 2. start_App.sh content:
 
-        #!/bin/bash
-        cd /home/pi/kivyapp
-        /usr/bin/python3 /home/pi/kivyapp/main.py
+      #!/bin/bash
+      cd /home/pi/kivyapp
+      /usr/bin/python3 /home/pi/kivyapp/main.py
         
 3. Add kivyapp.service for systemd :
 >Add kivyapp.service
         
-        sudo vi /lib/systemd/system/kivyapp.service
+      sudo vi /lib/systemd/system/kivyapp.service
         
 >Add Lines:
 
-        [Unit]
-        Descriptiona=KivyApp Service
-        After=multi-user.target
+      [Unit]
+      Descriptiona=KivyApp Service
+      After=multi-user.target
 
-        [Service]
-        Type=idle
+      [Service]
+      Type=idle
 
-        User=pi        
-        ExecStart=/bin/bash /home/pi/start_App.sh
+      User=pi        
+      ExecStart=/bin/bash /home/pi/start_App.sh
 
-        Restart=always
-        RestartSec=0
+      Restart=always
+      RestartSec=0
 
-        [Install]
-        WantedBy=multi-user.target
+      [Install]
+      WantedBy=multi-user.target
         
  >Reload Daemon:
  
