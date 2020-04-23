@@ -21,14 +21,14 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 ### Rotate touchscreen:
 >Setting File:
 
-        $sudo vi /boot/config.txt
+	$sudo vi /boot/config.txt
 >Add Line:
 
-        lcd_rotate=2
+	lcd_rotate=2
 ### Install FTP Server:
 >Install CMD:
 
-        $sudo apt install vsftpd
+	$sudo apt install vsftpd
 
 >Setting File:
 
@@ -41,6 +41,7 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 >Enable service:
 
         $sudo systemctl enable vsftpd
+	
 ### Setup raspberry to route AP:
 You can follow from [RaspAP](https://raspap.com/)
         
@@ -48,16 +49,18 @@ You can follow from [RaspAP](https://raspap.com/)
 ### Install kivy for python3 on raspbian:
 1.  Update for raspberry:
 
-		$sudo apt update
+
+	$sudo apt update
+    
     
 2.  Install for raspberry:
 
-		$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
-		pkg-config libgl1-mesa-dev libgles2-mesa-dev \
-		python-setuptools libgstreamer1.0-dev git-core \
-		gstreamer1.0-plugins-{bad,base,good,ugly} \
-		gstreamer1.0-{omx,alsa} python-dev libmtdev-dev \
-		xclip xsel libjpeg-dev
+	$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev \
+	pkg-config libgl1-mesa-dev libgles2-mesa-dev \
+	python-setuptools libgstreamer1.0-dev git-core \
+	gstreamer1.0-plugins-{bad,base,good,ugly} \
+	gstreamer1.0-{omx,alsa} python-dev libmtdev-dev \
+	xclip xsel libjpeg-dev
         
 3.  Additional install SDL2:
         
