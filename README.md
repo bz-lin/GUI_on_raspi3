@@ -36,7 +36,7 @@ You can download image file from [Buster Lite](https://downloads.raspberrypi.org
 	lcd_rotate=2
 	dtoverlay=pi3-disable-wifi
 	dtoverlay=pi3-disable-bt
-
+	enable_uart=1
 >disable service:
 
 	$sudo systemctl disable hciuart
