@@ -82,13 +82,11 @@ You can follow from [RaspAP](https://raspap.com/)
 3.Additional install SDL2:
         
 	$sudo apt install libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
-        
 4.Install moudle for python3:
 
     	$sudo apt install python3-pip
 	$pip3 install setuptools
 	$pip3 install Cython
-    
 5.Install kivy1.11.1 for python3:
          
 	~$wget https://kivy.org/downloads/1.11.1/Kivy-1.11.1.tar.gz
